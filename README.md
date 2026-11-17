@@ -54,6 +54,10 @@ python analyze.py                # results/summary.md and results/detection_by_d
 
 **Results (v0.1, gpt-oss-120b, 3 reviews per design and condition).** Both conditions caught almost every planted flaw: 29 of 30 reviews without the skill and 30 of 30 with it. With the skill, every flaw that was caught was also marked blocking, so the review would not let the design go ahead with it (90% without the skill). Both conditions were too cautious on the two clean designs: every review raised a blocking problem there. The planted flaws turned out to be easy for this model, which left almost no room for a difference, and by the reading rules set before the run this test cannot separate the two conditions. The next test uses subtler flaws in more complex designs, where I expect the gap to be larger; that is a hypothesis to test, not a result. One change was made after I had seen the results, a fix to how verdicts are read, and it is recorded in `eval/PLAN.md`. The full summary is in `eval/results/summary.md`. The 72 reviews are in `eval/outputs/raw_runs.jsonl`, the hand scores in `eval/scoring/sheet.csv`, and the key that unblinds them in `eval/scoring/_key_DO_NOT_OPEN.csv`; `python analyze.py` reproduces the summary from these. Don't rerun `make_scoring_sheet.py` in this copy: it would overwrite the scores with a blank sheet.
 
+## In use
+
+Its first real use was on my own next study, on how language models respond to a correction that gives a direction but no target. Before the pilot, the skill's audit found three problems that would each have undermined a main claim: the comparison point did not carry the same information as the conversation it was compared with; the rule for choosing a correction's direction contradicted itself; and a control arm would have left the outcome missing mostly in that arm. All three were fixed before any model was called.
+
 ## Repository layout
 
 ```
