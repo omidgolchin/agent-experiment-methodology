@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this skill or its evaluation, please cite it as below."
+title: "Agent Experiment Methodology: a skill for auditing the design of experiments on LLM agents"
+authors:
+  - family-names: Golchin
+    given-names: Omid
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/omidgolchin/agent-experiment-methodology"
+keywords:
+  - experimental design
+  - research methodology
+  - LLM agents
+  - multi-agent systems
+  - agent evaluation
+  - agent skills

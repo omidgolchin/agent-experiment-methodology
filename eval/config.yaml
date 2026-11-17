@@ -1,0 +1,23 @@
+# Settings for the seeded-flaw evaluation. Decide these before running, then freeze (python freeze.py).
+
+# Any OpenAI-compatible endpoint works. Together AI is shown; set TOGETHER_API_KEY in your environment.
+base_url: https://api.together.xyz/v1
+api_key_env: TOGETHER_API_KEY
+model: openai/gpt-oss-120b      # record the exact model; change before freezing if you prefer another
+
+temperature: 0.7
+max_tokens: 2500
+reps: 3                          # runs per design x condition
+master_seed: 20261110            # drives run order (and the seed sent to the API, where supported)
+
+conditions: [baseline, skill]
+
+# Files concatenated into the "skill" system prompt, in this order.
+skill_files:
+  - ../skill/agent-experiment-methodology/SKILL.md
+  - ../skill/agent-experiment-methodology/references/agent-protocols.md
+  - ../skill/agent-experiment-methodology/references/agent-hazards.md
+  - ../skill/agent-experiment-methodology/references/identification.md
+  - ../skill/agent-experiment-methodology/references/operationalization.md
+  - ../skill/agent-experiment-methodology/references/computational-experiments.md
+  - ../skill/agent-experiment-methodology/references/analysis-planning.md

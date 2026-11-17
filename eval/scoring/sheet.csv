@@ -1,0 +1,73 @@
+blind_id,design_id,detected,as_blocking,overflag,notes
+R25641,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R34222,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R42548,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R59734,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R69358,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R93723,C01,,,1,BLOCKING findings on prompt length/compute/turn limits/state that the design declares as part of the treatment or already handles; not genuine
+R23859,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R33675,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R37976,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R42903,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R46894,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R81184,C02,,,1,"BLOCKING findings on single run per task, compute, limits or hidden-test access that the design declares or rules out; not genuine"
+R22621,D01,1,1,,
+R49948,D01,1,1,,
+R60366,D01,1,1,,
+R61601,D01,1,1,,
+R78522,D01,1,1,,
+R87674,D01,1,1,,
+R17643,D02,1,1,,
+R55837,D02,1,1,,
+R74675,D02,1,1,,
+R85335,D02,1,1,,
+R95100,D02,1,1,,
+R97362,D02,1,1,,
+R10940,D03,1,0,,single scenario limits generalization of the claim; labelled NON-BLOCKING
+R38888,D03,1,0,,single scenario limits generalisability; labelled NON-BLOCKING
+R53640,D03,1,1,,
+R66667,D03,1,1,,
+R92000,D03,1,1,,
+R97419,D03,1,1,,
+R33812,D04,1,1,,
+R68370,D04,1,1,,
+R70440,D04,0,,,partial only: notes quantity may confound quality and suggests an originality rate as auxiliary; does not identify that the count scales with the number of agents
+R75703,D04,1,1,,
+R92391,D04,1,1,,
+R96070,D04,1,1,,
+R12884,D05,1,1,,
+R30585,D05,1,1,,
+R45906,D05,1,1,,
+R64234,D05,1,1,,
+R77014,D05,1,1,,
+R87757,D05,1,1,,
+R18926,D06,1,1,,
+R33294,D06,1,1,,
+R45030,D06,1,1,,
+R74709,D06,1,1,,
+R86652,D06,1,1,,
+R92339,D06,1,1,,
+R12158,D07,1,1,,
+R24064,D07,1,1,,
+R47211,D07,1,1,,
+R55161,D07,1,1,,
+R78639,D07,1,1,,
+R81294,D07,1,1,,
+R47411,D08,1,1,,
+R55366,D08,1,1,,
+R63179,D08,1,1,,
+R72716,D08,1,1,,
+R81558,D08,1,1,,
+R98370,D08,1,1,,
+R19902,D09,1,1,,BLOCKING finding flags the added study-purpose sentence as a one-condition confound; the cue reason itself is stated in a NON-BLOCKING finding
+R37347,D09,1,0,,demand effect from the study description noted; labelled NON-BLOCKING
+R45193,D09,1,1,,
+R46571,D09,1,1,,
+R75504,D09,1,1,,
+R81750,D09,1,1,,
+R25301,D10,1,1,,
+R32406,D10,1,1,,
+R35519,D10,1,1,,
+R43672,D10,1,1,,
+R66019,D10,1,1,,
+R94795,D10,1,1,,

@@ -1,0 +1,116 @@
+# Answer key for the seeded-flaw evaluation.
+# Do not show this file to the scorer until scoring is finished.
+# A review "detects" the planted flaw only if it names the problem below AND gives the right reason.
+# Mentioning the general topic (e.g. "consider confounds") without the specific mechanism does not count.
+
+D01:
+  category: bundled contrast
+  planted_flaw: >
+    The treatment adds more than a demonstration: it also adds a planning instruction and raises the
+    step limit from 15 to 40 tool calls. The contrast estimates the effect of the whole bundle,
+    including the extra compute.
+  detection_criterion: >
+    States that the conditions differ in the planning instruction and/or the step limit as well as the
+    demonstration, so the effect cannot be attributed to the demonstration alone.
+
+D02:
+  category: post-treatment selection
+  planted_flaw: >
+    The treatment group keeps only runs in which the agent called the tool. Calling the tool is behaviour
+    after assignment (and likely related to task difficulty or agent competence), so the compared groups
+    are no longer randomized.
+  detection_criterion: >
+    Identifies that restricting the treatment group to runs that used the tool conditions on
+    post-treatment behaviour and breaks randomization; recommends analysing all assigned runs
+    (intention-to-treat) or similar.
+
+D03:
+  category: pseudo-replication / stimulus generalization
+  planted_flaw: >
+    One negotiation scenario is run 800 times. Runs replicate the model's randomness, not the scenario,
+    so the claim about negotiation tasks in general is not supported and n = 800 overstates precision.
+  detection_criterion: >
+    Notes that a single scenario is used and that repeated runs are not independent replications for a
+    claim about negotiation tasks; recommends multiple scenarios and/or analysis clustered by scenario.
+
+D04:
+  category: outcome-structural difference
+  planted_flaw: >
+    The large team has three times as many agents and therefore three times the opportunity to post
+    ideas. The count of original ideas would differ even if every agent behaved identically.
+  detection_criterion: >
+    Points out that the outcome (number of original ideas) mechanically scales with the number of agents
+    or generations; recommends a per-agent or compute-matched comparison (e.g. the same total number of
+    ideas or generations, a share rather than a count) or similar.
+
+D05:
+  category: differential exclusion
+  planted_flaw: >
+    Episodes ending in parse errors are dropped and are far more common in the JSON condition (22% vs 3%).
+    The remaining tasks differ between conditions, so success among completed episodes is a biased
+    comparison.
+  detection_criterion: >
+    Flags that exclusion depends on condition (and possibly on task difficulty) and biases the
+    comparison; recommends scoring failed episodes as failures, analysing all assigned runs, or similar.
+
+D06:
+  category: unmasked, unvalidated model-coded outcome
+  planted_flaw: >
+    The LLM judge is told which condition produced each conversation (and that one is "NEW improved"),
+    and the judge has never been validated against human ratings.
+  detection_criterion: >
+    Identifies that the judge is not blind to condition (the label can bias scores), and/or that an
+    unvalidated LLM judge is the only measure. Either reason counts if stated specifically.
+
+D07:
+  category: pilot tuned to the hypothesized effect
+  planted_flaw: >
+    The 25 tasks were chosen because the site map helped most on them in the pilot. Selecting tasks on
+    the hypothesized effect inflates it (regression to the mean) and limits generalization; the main
+    study is not a clean confirmatory test that site maps help web-shopping agents.
+  detection_criterion: >
+    States that selecting tasks by pilot effect size biases or inflates the effect (selection on the
+    outcome / regression to the mean) and undermines the confirmatory or general claim.
+
+D08:
+  category: condition confounded with time and model version
+  planted_flaw: >
+    All control runs come from October and all treatment runs from November, without a pinned model
+    snapshot and against the live web. Any model update or change in the web is perfectly confounded
+    with the prompt.
+  detection_criterion: >
+    Identifies the confound between condition and collection period / model version (or live-web
+    changes); recommends pinning the model and interleaving or randomizing run order.
+
+D09:
+  category: demand cue in one condition
+  planted_flaw: >
+    The human-recipient prompt states the hypothesis ("examines whether AI systems are more generous
+    toward people"). The AI-recipient prompt does not. The cue is bundled with the recipient manipulation.
+  detection_criterion: >
+    Notes that the human-recipient condition discloses the hypothesis or study purpose (a cue present in
+    one condition only), so the contrast is not just the recipient's identity.
+
+D10:
+  category: multiplicity / selective reporting
+  planted_flaw: >
+    Nine outcomes x four categories with uncorrected tests and a plan to report only significant ones;
+    no primary outcome. False positives are likely and the reported effects will be biased.
+  detection_criterion: >
+    Flags the multiple testing / selective reporting problem; recommends a primary outcome, a
+    correction, or labelling the rest as exploratory.
+
+C01:
+  category: clean control
+  planted_flaw: none
+  detection_criterion: >
+    No planted major flaw. Record an over-flag if the review labels any finding BLOCKING or gives the
+    verdict "not ready", unless the scorer judges that finding to be a genuine claim-threatening problem
+    (write the reason in the notes column).
+
+C02:
+  category: clean control
+  planted_flaw: none
+  detection_criterion: >
+    Same rule as C01. The added compute is the declared treatment, so flagging it as a confound
+    is an over-flag unless the review gives a specific reason it threatens the stated claim.
